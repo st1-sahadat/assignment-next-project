@@ -15,7 +15,7 @@ const Navbar = () => {
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
 
         {/* Logo Section */}
-        <Link href="/" className="flex items-center gap-2.5">
+        <Link href="../" className="flex items-center gap-2.5">
           {/* <Dumbbell className="w-6 h-6 text-[#a8f000] -rotate-45" /> */}
           <Image src={Logo} alt="Fitlog logo" />
           <span className="font-extrabold tracking-wider text-xl text-white uppercase">
@@ -25,7 +25,8 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="flex items-center gap-2">
-          <button
+          <Link
+            href="../workouts" 
             onClick={() => setActiveTab("workouts")}
             className={`px-5 py-1.5 rounded-full font-medium text-sm transition-colors ${activeTab === "workouts"
                 ? "bg-[#1b2609] text-[#a8f000]"
@@ -33,9 +34,10 @@ const Navbar = () => {
               }`}
           >
             Workouts
-          </button>
+          </Link>
 
-          <button
+          <Link
+            href="../"
             onClick={() => setActiveTab("my-plan")}
             className={`px-5 py-1.5 rounded-full font-medium text-sm transition-colors ${activeTab === "my-plan"
                 ? "bg-[#1b2609] text-[#a8f000]"
@@ -43,7 +45,7 @@ const Navbar = () => {
               }`}
           >
             My Plan
-          </button>
+          </Link>
         </div>
 
         {/* Right Badges */}

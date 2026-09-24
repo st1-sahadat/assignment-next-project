@@ -7,7 +7,6 @@ import WorkoutCard from "./WorkoutCard/WorkoutCard";
 
 const HomePageCard = async () => {
     const fatchData = await DataFatch();
-    console.log(fatchData);
 
 
     return (
