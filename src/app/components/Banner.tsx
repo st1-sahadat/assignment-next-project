@@ -27,7 +27,7 @@ const Banner = () => {
 
                     {/* CTA Button */}
                     <Link
-                        href="/workouts"
+                        href="/"
                         className="bg-[#ccff00] hover:bg-[#b5e600] text-black font-extrabold text-xs sm:text-sm uppercase tracking-wider px-6 py-3.5 rounded-lg transition-colors duration-200"
                     >
                         BROWSE WORKOUTS

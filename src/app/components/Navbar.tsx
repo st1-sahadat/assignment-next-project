@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import Logo from "@/app/assets/logo.png";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -9,12 +11,13 @@ const Navbar = () => {
   const [savedCount, setSavedCount] = useState(0);
 
   return (
-    <header className="bg-[#0d0d0e] border-b border-zinc-900 px-6 py-3 text-white">
+    <header className=" border-b border-zinc-900 px-6 py-5 text-white">
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
 
         {/* Logo Section */}
         <Link href="/" className="flex items-center gap-2.5">
           {/* <Dumbbell className="w-6 h-6 text-[#a8f000] -rotate-45" /> */}
+          <Image src={Logo} alt="Fitlog logo" />
           <span className="font-extrabold tracking-wider text-xl text-white uppercase">
             FITLOG
           </span>
