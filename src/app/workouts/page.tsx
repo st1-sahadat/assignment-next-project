@@ -1,6 +1,8 @@
 import DataFatch from "../components/DataFatch";
 import { IWorkoutType } from "../components/Type/type";
 import WorkoutCard from "../components/WorkoutCard/WorkoutCard";
+
+
 const WorkoutPage = async() => {
     const fatchData = await DataFatch();
     return (        

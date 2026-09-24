@@ -11,7 +11,7 @@ interface WorkoutCardType {
 const WorkoutCard = ({ exercise }: WorkoutCardType) => {
 
     return (
-        <Link key={exercise.id} href={``} className="block w-full max-w-sm">
+        <Link href={`/workouts/${exercise.id}`} className="block w-full max-w-sm">
             <div className="bg-[#111319] border border-gray-800/80 rounded-2xl overflow-hidden shadow-lg hover:border-gray-700 transition-colors">
 
                 {/* Top Image Container */}
