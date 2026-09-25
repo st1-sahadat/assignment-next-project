@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { FiChevronDown } from 'react-icons/fi';
 import TodayPlanItem from './PlanSavedBtn/TodayPlanItem';
 import SavedItem from './PlanSavedBtn/SavedItem';
+import PlanItemCalculate from './PlanSavedBtn/PlanItemCalculate';
+import SavedItemCalculate from './PlanSavedBtn/SavedItemCalculate';
 
 export default function MyPlanPage() {
     const [activeTab, setActiveTab] = useState('saved'); // 'todaysPlan' or 'saved'
@@ -25,26 +27,10 @@ export default function MyPlanPage() {
                     </p>
                 </div>
 
-                {/* Stats Summary Bar */}
-                <div className="bg-[#111319] border border-gray-800/80 rounded-2xl p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {/* Exercises Count */}
-                    <div className="flex flex-col space-y-2">
-                        <span className="text-gray-400 text-xs font-semibold">Exercises</span>
-                        <span className="text-4xl md:text-5xl font-black text-[#ccff00]">0</span>
-                    </div>
-
-                    {/* Minutes */}
-                    <div className="flex flex-col space-y-2 md:border-l md:border-gray-800/60 md:pl-8">
-                        <span className="text-gray-400 text-xs font-semibold">Minutes</span>
-                        <span className="text-4xl md:text-5xl font-black text-white">0</span>
-                    </div>
-
-                    {/* Calories */}
-                    <div className="flex flex-col space-y-2 md:border-l md:border-gray-800/60 md:pl-8">
-                        <span className="text-gray-400 text-xs font-semibold">Calories</span>
-                        <span className="text-4xl md:text-5xl font-black text-white">0</span>
-                    </div>
-                </div>
+               
+                {activeTab === 'saved' && <SavedItemCalculate /> }
+                {activeTab === 'todaysPlan' && <PlanItemCalculate /> }
+               
 
                 {/* Controls Row: Tabs & Sort Dropdown */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">

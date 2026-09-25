@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React, { useContext } from 'react';
 import { IoMdCheckmark } from 'react-icons/io';
 import { RxCross2 } from 'react-icons/rx';
-import NotAvialibleItem from '../../components/Shared/NotAvialibleItem';
+import NotAvialibleItem from '../../components/NotAvialibleItem';
 
 const TodayPlanItem = () => {
     const { workoutTodayPlan, setWorkoutTodayPlan } = useContext(workoutContext);

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Shared/Navbar";
-import FooterPage from "./components/Shared/Footer";
+import Navbar from "./components/Navbar";
+import FooterPage from "./components/Footer";
 import WorkoutProvider from "./context/workoutContext";
 import { Bounce, ToastContainer } from "react-toastify";
 

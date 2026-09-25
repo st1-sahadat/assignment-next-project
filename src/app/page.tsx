@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Banner from "./components/Shared/Banner";
+import Banner from "./components/Banner";
 import HomePageCard from "./components/HomePageCard";
 
 export default function Home() {

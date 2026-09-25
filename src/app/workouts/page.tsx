@@ -1,6 +1,6 @@
-import DataFatch from "../components/Shared/DataFatch";
+import DataFatch from "../components/DataFatch";
 import { IWorkoutType } from "../components/Type/type";
-import WorkoutCard from "../components/WorkoutCard/WorkoutCard";
+import WorkoutCard from "../components/WorkoutCard";
 
 
 const WorkoutPage = async() => {

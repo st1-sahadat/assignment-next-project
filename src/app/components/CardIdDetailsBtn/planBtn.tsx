@@ -3,7 +3,7 @@ import { workoutContext } from '@/app/context/workoutContext';
 import React, { useContext } from 'react';
 import { FiCalendar } from 'react-icons/fi';
 import { toast } from 'react-toastify';
-import { IWorkoutType } from '../../Type/type';
+import { IWorkoutType } from '../Type/type';
 
 
 

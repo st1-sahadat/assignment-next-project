@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext } from 'react';
 import { RxCross2 } from 'react-icons/rx';
-import NotAvialibleItem from '../../components/Shared/NotAvialibleItem';
+import NotAvialibleItem from '../../components/NotAvialibleItem';
 
 const SavedItem = () => {
     const { workoutSaved, setWorkoutSaved } = useContext(workoutContext);

@@ -1,7 +1,9 @@
-import DataFatch from "@/app/components/Shared/DataFatch";
+import PlanBtn from "@/app/components/CardIdDetailsBtn/planBtn";
+import SavedBtn from "@/app/components/CardIdDetailsBtn/savedBtn";
+import DataFatch from "@/app/components/DataFatch";
 import { IWorkoutType } from "@/app/components/Type/type";
-import PlanBtn from "@/app/components/WorkoutPlanSavedBtn/CardIdDetailsBtn/planBtn";
-import SavedBtn from "@/app/components/WorkoutPlanSavedBtn/CardIdDetailsBtn/savedBtn";
+// import PlanBtn from "@/app/components/WorkoutPlanSavedBtn/CardIdDetailsBtn/planBtn";
+// import SavedBtn from "@/app/components/WorkoutPlanSavedBtn/CardIdDetailsBtn/savedBtn";
 import Image from "next/image";
 import { FiBookmark, FiCalendar } from "react-icons/fi";
 

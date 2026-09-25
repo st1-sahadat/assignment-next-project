@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FiClock, FiStar } from "react-icons/fi";
 import { FaFantasyFlightGames } from "react-icons/fa";
-import { IWorkoutType } from '../Type/type';
+import { IWorkoutType } from './Type/type';
 
 interface WorkoutCardType {
         exercise: IWorkoutType
