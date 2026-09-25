@@ -3,13 +3,13 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { FiChevronDown } from 'react-icons/fi';
+import TodayPlanItem from './PlanSavedBtn/TodayPlanItem';
+import SavedItem from './PlanSavedBtn/SavedItem';
 
 export default function MyPlanPage() {
     const [activeTab, setActiveTab] = useState('saved'); // 'todaysPlan' or 'saved'
     const [sortBy, setSortBy] = useState('Duration');
 
-    // Example empty state - replace with your dynamic list logic
-    const items = [];
 
     return (
         <div className="min-h-screen bg-[#0b0c10] text-gray-300 p-6 md:p-12">
@@ -96,28 +96,8 @@ export default function MyPlanPage() {
 
                 </div>
 
-                {/* Content Container (Empty State) */}
-                {items.length === 0 ? (
-                    <div className="border border-dashed border-gray-800/80 rounded-2xl py-24 px-6 flex flex-col items-center justify-center text-center bg-[#111319]/20">
-                        <h2 className="text-xl md:text-2xl font-black text-white uppercase tracking-wide mb-2">
-                            NOTHING HERE YET
-                        </h2>
-                        <p className="text-gray-400 text-sm mb-8 max-w-sm">
-                            Browse the library and add a lift to get today moving.
-                        </p>
-                        <Link
-                            href="/workouts"
-                            className="bg-[#ccff00] hover:bg-[#b5e600] text-black font-extrabold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full transition-colors shadow-lg shadow-[#ccff00]/10"
-                        >
-                            Go to workouts
-                        </Link>
-                    </div>
-                ) : (
-                    /* Render workout cards when items exist */
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {/* Cards mapped here */}
-                    </div>
-                )}
+                {activeTab === 'todaysPlan' && <TodayPlanItem /> }
+                {activeTab === 'saved' && <SavedItem /> }
 
             </div>
         </div>

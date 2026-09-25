@@ -4,10 +4,10 @@ import React, { createContext, ReactNode, useState } from "react";
 import { IWorkoutType } from "../components/Type/type";
 
 interface IWorkoutContext {
-  readBooks: IWorkoutType[];
-  setReadBooks: React.Dispatch<React.SetStateAction<IWorkoutType[]>>;
-  wishlist: IWorkoutType[];
-  setWishlist: React.Dispatch<React.SetStateAction<IWorkoutType[]>>;
+  workoutTodayPlan: IWorkoutType[];
+  setWorkoutTodayPlan: React.Dispatch<React.SetStateAction<IWorkoutType[]>>;
+  workoutSaved: IWorkoutType[];
+  setWorkoutSaved: React.Dispatch<React.SetStateAction<IWorkoutType[]>>;
 }
 
 export const workoutContext = createContext<IWorkoutContext>({

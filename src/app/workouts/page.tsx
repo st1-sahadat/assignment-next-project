@@ -1,4 +1,4 @@
-import DataFatch from "../components/DataFatch";
+import DataFatch from "../components/Shared/DataFatch";
 import { IWorkoutType } from "../components/Type/type";
 import WorkoutCard from "../components/WorkoutCard/WorkoutCard";
 

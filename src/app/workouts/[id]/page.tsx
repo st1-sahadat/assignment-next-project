@@ -1,7 +1,7 @@
-import DataFatch from "@/app/components/DataFatch";
+import DataFatch from "@/app/components/Shared/DataFatch";
 import { IWorkoutType } from "@/app/components/Type/type";
-import PlanBtn from "@/app/components/WorkoutPlanSavedBtn/planBtn";
-import SavedBtn from "@/app/components/WorkoutPlanSavedBtn/savedBtn";
+import PlanBtn from "@/app/components/WorkoutPlanSavedBtn/CardIdDetailsBtn/planBtn";
+import SavedBtn from "@/app/components/WorkoutPlanSavedBtn/CardIdDetailsBtn/savedBtn";
 import Image from "next/image";
 import { FiBookmark, FiCalendar } from "react-icons/fi";
 
@@ -128,8 +128,8 @@ const BookDetailsPage = async ({ params }: IBookDetailsPageProps) => {
 
                     {/* Action Buttons */}
                     <div className="flex flex-wrap items-center gap-3 pt-4">
-                        <PlanBtn />  
-                        <SavedBtn /> 
+                        <PlanBtn workoutId = {workoutId}/>  
+                        <SavedBtn workoutId = {workoutId}/> 
                     </div>
 
                 </div>
