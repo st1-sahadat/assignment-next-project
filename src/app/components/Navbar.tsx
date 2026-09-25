@@ -37,7 +37,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="../"
+            href="../my-plan"
             onClick={() => setActiveTab("my-plan")}
             className={`px-5 py-1.5 rounded-full font-medium text-sm transition-colors ${activeTab === "my-plan"
                 ? "bg-[#1b2609] text-[#a8f000]"

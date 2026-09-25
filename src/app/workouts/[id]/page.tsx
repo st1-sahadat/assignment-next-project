@@ -1,5 +1,7 @@
 import DataFatch from "@/app/components/DataFatch";
 import { IWorkoutType } from "@/app/components/Type/type";
+import PlanBtn from "@/app/components/WorkoutPlanSavedBtn/planBtn";
+import SavedBtn from "@/app/components/WorkoutPlanSavedBtn/savedBtn";
 import Image from "next/image";
 import { FiBookmark, FiCalendar } from "react-icons/fi";
 
@@ -126,15 +128,8 @@ const BookDetailsPage = async ({ params }: IBookDetailsPageProps) => {
 
                     {/* Action Buttons */}
                     <div className="flex flex-wrap items-center gap-3 pt-4">
-                        <button className="flex items-center gap-2 bg-[#ccff00] hover:bg-[#b5e600] text-black font-extrabold text-xs uppercase tracking-wider px-5 py-3 rounded-xl transition-colors">
-                            <FiCalendar className="w-4 h-4" />
-                            <span>Add to today&apos;s plan</span>
-                        </button>
-
-                        <button className="flex items-center gap-2 bg-transparent hover:bg-gray-800/50 text-gray-300 border border-gray-800 font-extrabold text-xs uppercase tracking-wider px-5 py-3 rounded-xl transition-colors">
-                            <FiBookmark className="w-4 h-4" />
-                            <span>Save for later</span>
-                        </button>
+                        <PlanBtn />  
+                        <SavedBtn /> 
                     </div>
 
                 </div>
