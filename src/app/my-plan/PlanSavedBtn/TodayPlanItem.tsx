@@ -12,9 +12,12 @@ const TodayPlanItem = ({sortPlan}:{sortPlan:IWorkoutType[]}) => {
     const { setWorkoutTodayPlan } = useContext(workoutContext);
     const [markAsDone, setMarkAsDone] = useState(false);
 
-    const handleClick =()=>{
+    const handleClickMarkAsDone =()=>{
         setMarkAsDone(true);
-        toast("Marks the workout done, ");
+        toast("Marks the workout done.");
+    }
+    const handleClickItemRemove =()=>{
+        toast("removes the workout.");
     }
 
 
@@ -90,7 +93,7 @@ const TodayPlanItem = ({sortPlan}:{sortPlan:IWorkoutType[]}) => {
 
                         {/* Mark as Done Button */}
                         <button 
-                        onClick={handleClick}
+                        onClick={handleClickMarkAsDone}
                         className={`px-5 py-2 rounded-full border border-gray-600 text-sm font-semibold transition duration-200 
                             ${markAsDone
                                 ? 'bg-[#cf0] text-black'
@@ -98,20 +101,16 @@ const TodayPlanItem = ({sortPlan}:{sortPlan:IWorkoutType[]}) => {
                             }`}
                         // className="px-5 py-2 rounded-full bg-[#d4ff00] text-black text-sm font-bold flex items-center gap-2 hover:bg-[#bce600] transition duration-200"
                         >
-                            {markAsDone ? (
-                                <>
-                                    <FaCheck className="inline mr-1" />
-                                    Mark as Done                                    
-                                </>
-                            ) : (
-                                'Mark as Done'
-                            )}
-                            
+                            <FaCheck className="inline mr-1" />
+                                    Mark as Done    
                         </button>
 
                         {/* Close Icon */}
                         <button 
-                            onClick={() => setWorkoutTodayPlan(sortPlan.filter(plan => plan.id !== m.id))}
+                            onClick={() => {
+                                handleClickItemRemove();
+                                setWorkoutTodayPlan(sortPlan.filter(f => f.id !== m.id));
+                            }}
                             aria-label={`Remove ${m.name} from today's plan`}
                             className="text-gray-500 hover:text-gray-300 p-2 transition duration-200">
                             <RxCross2 />

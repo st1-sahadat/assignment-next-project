@@ -5,10 +5,14 @@ import React, { useContext } from 'react';
 import { RxCross2 } from 'react-icons/rx';
 import NotAvialibleItem from './NotAvialibleItem';
 import { IWorkoutType } from '@/app/components/Type/type';
+import { toast } from 'react-toastify';
 
 const SavedItem = ({sortSaved}:{sortSaved:IWorkoutType[]}) => {
     const { setWorkoutSaved } = useContext(workoutContext);
-console.log(sortSaved);
+    
+    const handleClickItemRemove =()=>{
+            toast("removes the workout.");
+        }
 
     return (
         sortSaved.length === 0 ? (
@@ -81,7 +85,10 @@ console.log(sortSaved);
 
                         {/* Close Icon */}
                         <button
-                            onClick={() => setWorkoutSaved(sortSaved.filter(plan => plan.id !== m.id))}
+                            onClick={() => {
+                                handleClickItemRemove();
+                                setWorkoutSaved(sortSaved.filter(plan => plan.id !== m.id))}
+                            }
                             aria-label={`Remove ${m.name} from today's plan`}
                             className="text-gray-500 hover:text-gray-300 p-2 transition duration-200">
                             <RxCross2 />

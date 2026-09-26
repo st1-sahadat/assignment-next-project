@@ -17,7 +17,6 @@ export default function MyPlanPage() {
 
     const sortWorkout = (workOut: IWorkoutType[]) => {
         const sortedWorkout = [...workOut];
-
         if (sortBy === "Duration") {
             sortedWorkout.sort((a, b) => a.duration - b.duration);
         } else if (sortBy === "Calories") {
@@ -25,7 +24,6 @@ export default function MyPlanPage() {
         } else if (sortBy === "Rating") {
             sortedWorkout.sort((a, b) => b.rating - a.rating);
         }
-
         return sortedWorkout;
     }
     const sortPlan: IWorkoutType[] = sortWorkout(workoutTodayPlan);
