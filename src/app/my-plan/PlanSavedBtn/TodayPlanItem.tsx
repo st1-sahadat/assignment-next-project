@@ -2,7 +2,6 @@ import { workoutContext } from '@/app/context/workoutContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext, useState } from 'react';
-import { IoMdCheckmark } from 'react-icons/io';
 import { RxCross2 } from 'react-icons/rx';
 import NotAvialibleItem from './NotAvialibleItem';
 import { IWorkoutType } from '@/app/components/Type/type';
