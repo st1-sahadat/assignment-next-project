@@ -1,17 +1,37 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { FiChevronDown } from 'react-icons/fi';
+import { useContext, useState } from 'react';
 import TodayPlanItem from './PlanSavedBtn/TodayPlanItem';
 import SavedItem from './PlanSavedBtn/SavedItem';
 import PlanItemCalculate from './PlanSavedBtn/PlanItemCalculate';
 import SavedItemCalculate from './PlanSavedBtn/SavedItemCalculate';
+import { IWorkoutType } from '../components/Type/type';
+import { workoutContext } from '../context/workoutContext';
+import { FiChevronDown } from 'react-icons/fi';
 
 export default function MyPlanPage() {
     const [activeTab, setActiveTab] = useState('saved'); // 'todaysPlan' or 'saved'
+
+    const { workoutTodayPlan, workoutSaved } = useContext(workoutContext);
     const [sortBy, setSortBy] = useState('Duration');
 
+    const sortWorkout = (workOut: IWorkoutType[]) => {
+        const sortedWorkout = [...workOut];
+
+        if (sortBy === "Duration") {
+            sortedWorkout.sort((a, b) => a.duration - b.duration);
+        } else if (sortBy === "Calories") {
+            sortedWorkout.sort((a, b) => a.caloriesBurned - b.caloriesBurned);
+        } else if (sortBy === "Rating") {
+            sortedWorkout.sort((a, b) => b.rating - a.rating);
+        }
+
+        return sortedWorkout;
+    }
+    const sortPlan: IWorkoutType[] = sortWorkout(workoutTodayPlan);
+    const sortSaved: IWorkoutType[] = sortWorkout(workoutSaved);
+    console.log(sortPlan,sortSaved);
+    
 
     return (
         <div className="min-h-screen bg-[#0b0c10] text-gray-300 p-6 md:p-12">
@@ -27,10 +47,10 @@ export default function MyPlanPage() {
                     </p>
                 </div>
 
-               
-                {activeTab === 'saved' && <SavedItemCalculate /> }
-                {activeTab === 'todaysPlan' && <PlanItemCalculate /> }
-               
+
+                {activeTab === 'saved' && <SavedItemCalculate />}
+                {activeTab === 'todaysPlan' && <PlanItemCalculate />}
+
 
                 {/* Controls Row: Tabs & Sort Dropdown */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -58,9 +78,10 @@ export default function MyPlanPage() {
                             Saved
                         </button>
                     </div>
+                    
 
-                    {/* Sort By Dropdown */}
-                    <div className="flex items-center space-x-3 self-end sm:self-auto">
+                    {/* sort workout value */}
+                    < div className="flex items-center space-x-3 self-end sm:self-auto" >
                         <span className="text-gray-400 text-xs font-semibold">Sort By</span>
                         <div className="relative">
                             <select
@@ -78,12 +99,12 @@ export default function MyPlanPage() {
                                 className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
                             />
                         </div>
-                    </div>
+                    </div >
 
                 </div>
 
-                {activeTab === 'todaysPlan' && <TodayPlanItem /> }
-                {activeTab === 'saved' && <SavedItem /> }
+                {activeTab === 'todaysPlan' && <TodayPlanItem sortPlan={sortPlan} />}
+                {activeTab === 'saved' && <SavedItem sortSaved={sortSaved} />}
 
             </div>
         </div>

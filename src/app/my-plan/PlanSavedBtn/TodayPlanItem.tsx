@@ -4,18 +4,20 @@ import Link from 'next/link';
 import React, { useContext } from 'react';
 import { IoMdCheckmark } from 'react-icons/io';
 import { RxCross2 } from 'react-icons/rx';
-import NotAvialibleItem from '../../components/NotAvialibleItem';
+import NotAvialibleItem from './NotAvialibleItem';
+import { IWorkoutType } from '@/app/components/Type/type';
 
-const TodayPlanItem = () => {
-    const { workoutTodayPlan, setWorkoutTodayPlan } = useContext(workoutContext);
+const TodayPlanItem = ({sortPlan}:{sortPlan:IWorkoutType[]}) => {
+    const { setWorkoutTodayPlan } = useContext(workoutContext);
 
     return (
-        workoutTodayPlan.length === 0 ? (
+        sortPlan.length === 0 ? (
            <NotAvialibleItem />
         ) : (
-            workoutTodayPlan.map((m, index:number) => (
+            sortPlan.map((m, index:number) => (
                 <div key={index}
-                className="w-full max-w-5xl bg-[#121212] border border-gray-800 rounded-2xl p-3 flex flex-wrap md:flex-nowrap items-center justify-between gap-4 transition-all hover:bg-[#181818]">
+                className=" bg-[#121212] border border-gray-800 rounded-2xl p-3 flex flex-wrap md:flex-nowrap items-center justify-between gap-4 transition-all hover:bg-[#181818]"
+                >
 
                     {/* LEFT: IMAGE & DETAILS */}
                     <div className="flex items-center gap-4 grow">
@@ -86,7 +88,7 @@ const TodayPlanItem = () => {
 
                         {/* Close Icon */}
                         <button 
-                            onClick={() => setWorkoutTodayPlan(workoutTodayPlan.filter(plan => plan.id !== m.id))}
+                            onClick={() => setWorkoutTodayPlan(sortPlan.filter(plan => plan.id !== m.id))}
                             aria-label={`Remove ${m.name} from today's plan`}
                             className="text-gray-500 hover:text-gray-300 p-2 transition duration-200">
                             <RxCross2 />
