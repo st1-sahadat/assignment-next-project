@@ -1,14 +1,23 @@
 import { workoutContext } from '@/app/context/workoutContext';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { IoMdCheckmark } from 'react-icons/io';
 import { RxCross2 } from 'react-icons/rx';
 import NotAvialibleItem from './NotAvialibleItem';
 import { IWorkoutType } from '@/app/components/Type/type';
+import { FaCheck } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const TodayPlanItem = ({sortPlan}:{sortPlan:IWorkoutType[]}) => {
     const { setWorkoutTodayPlan } = useContext(workoutContext);
+    const [markAsDone, setMarkAsDone] = useState(false);
+
+    const handleClick =()=>{
+        setMarkAsDone(true);
+        toast("Marks the workout done, ");
+    }
+
 
     return (
         sortPlan.length === 0 ? (
@@ -81,9 +90,24 @@ const TodayPlanItem = ({sortPlan}:{sortPlan:IWorkoutType[]}) => {
                         </Link>
 
                         {/* Mark as Done Button */}
-                        <button className="px-5 py-2 rounded-full bg-[#d4ff00] text-black text-sm font-bold flex items-center gap-2 hover:bg-[#bce600] transition duration-200">
-                           <IoMdCheckmark />
-                            Mark as Done
+                        <button 
+                        onClick={handleClick}
+                        className={`px-5 py-2 rounded-full border border-gray-600 text-sm font-semibold transition duration-200 
+                            ${markAsDone
+                                ? 'bg-[#cf0] text-black'
+                                : 'text-gray-300 hover:bg-gray-800'
+                            }`}
+                        // className="px-5 py-2 rounded-full bg-[#d4ff00] text-black text-sm font-bold flex items-center gap-2 hover:bg-[#bce600] transition duration-200"
+                        >
+                            {markAsDone ? (
+                                <>
+                                    <FaCheck className="inline mr-1" />
+                                    Mark as Done                                    
+                                </>
+                            ) : (
+                                'Mark as Done'
+                            )}
+                            
                         </button>
 
                         {/* Close Icon */}

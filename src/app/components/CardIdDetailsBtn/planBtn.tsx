@@ -20,7 +20,7 @@ const PlanBtn = ({workoutId} : {workoutId : IWorkoutType}) => {
         }
 
         setWorkoutTodayPlan([...workoutTodayPlan, workoutId]);
-        toast(`${workoutId.name} Successfully Add.`);
+        toast(`${workoutId.name} Added to today's plan`);
     }
 
 

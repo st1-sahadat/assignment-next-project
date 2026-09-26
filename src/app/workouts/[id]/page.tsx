@@ -5,7 +5,6 @@ import { IWorkoutType } from "@/app/components/Type/type";
 // import PlanBtn from "@/app/components/WorkoutPlanSavedBtn/CardIdDetailsBtn/planBtn";
 // import SavedBtn from "@/app/components/WorkoutPlanSavedBtn/CardIdDetailsBtn/savedBtn";
 import Image from "next/image";
-import { FiBookmark, FiCalendar } from "react-icons/fi";
 
 
 

@@ -19,7 +19,7 @@ const HomePageCard = async () => {
                     Twelve lifts covering every major muscle group.
                 </p>
             </div>
-            <div className="mt-6 grid w-full grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:mt-10 lg:grid-cols-3 lg:gap-6">
+            <div className="mt-6 grid w-full grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:mt-10 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4 xl:gap-7 2xl:grid-cols-5 2xl:gap-8">
                 {fatchData.map((m: IWorkoutType, index: number) => {
                     return <WorkoutCard key={index} exercise={m} />;
                 })}
