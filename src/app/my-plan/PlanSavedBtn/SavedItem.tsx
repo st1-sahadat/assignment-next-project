@@ -20,7 +20,7 @@ const SavedItem = ({sortSaved}:{sortSaved:IWorkoutType[]}) => {
         ) : (
             sortSaved.map((m, index:number) => (
                 <div key={index}
-                    className="w-full max-w-5xl bg-[#121212] border border-gray-800 rounded-2xl p-3 flex flex-wrap md:flex-nowrap items-center justify-between gap-4 transition-all hover:bg-[#181818]">
+                    className=" bg-[#121212] border border-gray-800 rounded-2xl p-3 flex flex-wrap md:flex-nowrap items-center justify-between gap-4 transition-all hover:bg-[#181818]">
 
                     {/* LEFT: IMAGE & DETAILS */}
                     <div className="flex items-center gap-4 grow">
