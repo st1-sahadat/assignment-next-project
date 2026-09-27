@@ -8,6 +8,8 @@ interface IWorkoutContext {
   setWorkoutTodayPlan: React.Dispatch<React.SetStateAction<IWorkoutType[]>>;
   workoutSaved: IWorkoutType[];
   setWorkoutSaved: React.Dispatch<React.SetStateAction<IWorkoutType[]>>;
+  markAsDone: number;
+  setMarkAsDone: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const workoutContext = createContext<IWorkoutContext>({
@@ -15,17 +17,22 @@ export const workoutContext = createContext<IWorkoutContext>({
   setWorkoutTodayPlan: () => {},
   workoutSaved: [],
   setWorkoutSaved: () => {},
+  markAsDone: 0,
+  setMarkAsDone: () => {},
 });
 
 const WorkoutProvider = ({ children }: { children: ReactNode }) => {
   const [workoutTodayPlan, setWorkoutTodayPlan] = useState<IWorkoutType[]>([]);
   const [workoutSaved, setWorkoutSaved] = useState<IWorkoutType[]>([]);
+  const [markAsDone, setMarkAsDone] = useState(0);
 
   const sharedData = {
     workoutTodayPlan,
     setWorkoutTodayPlan,
     workoutSaved,
     setWorkoutSaved,
+    markAsDone,
+    setMarkAsDone,
   };
 
   return (

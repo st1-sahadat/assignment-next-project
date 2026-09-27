@@ -28,9 +28,12 @@ export default function MyPlanPage() {
     }
     const sortPlan: IWorkoutType[] = sortWorkout(workoutTodayPlan);
     const sortSaved: IWorkoutType[] = sortWorkout(workoutSaved);
-    console.log(sortPlan,sortSaved);
     
-
+    // Pass value localStorage
+    // localStorage.setItem("sortPlan", JSON.stringify(sortPlan));
+    // const sortPlanGet = localStorage.getItem("sortPlan")
+    // console.log(sortPlanGet);
+    
     return (
         <div className="min-h-screen bg-[#0b0c10] text-gray-300 p-6 md:p-12">
             <div className="max-w-7xl mx-auto space-y-8">

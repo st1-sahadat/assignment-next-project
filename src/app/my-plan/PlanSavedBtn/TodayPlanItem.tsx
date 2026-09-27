@@ -10,13 +10,14 @@ import { FaCheck } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
 const TodayPlanItem = ({sortPlan}:{sortPlan:IWorkoutType[]}) => {
-    const { setWorkoutTodayPlan } = useContext(workoutContext);
-    const [markAsDone, setMarkAsDone] = useState<IWorkoutType['id'] | null>(null);
+    const { setWorkoutTodayPlan, markAsDone, setMarkAsDone } = useContext(workoutContext);
+    // const [markAsDone, setMarkAsDone] = useState<IWorkoutType['id'] | null>();
 
     const handleClickMarkAsDone =(id: IWorkoutType['id'])=>{
-        if(sortPlan.some(f => f.id === id)){
+        if(sortPlan.find(f => f.id === id)){
         setMarkAsDone(id);
-        toast("Marks the workout done.");}
+        toast("Marks the workout done.");
+    }
     }
     const handleClickItemRemove =()=>{
         toast("removes the workout.");
