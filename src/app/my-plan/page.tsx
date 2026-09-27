@@ -30,7 +30,7 @@ export default function MyPlanPage() {
     const sortSaved: IWorkoutType[] = sortWorkout(workoutSaved);
     
     // Pass value localStorage
-    // localStorage.setItem("sortPlan", JSON.stringify(sortPlan));
+    // localStorage.setItem("sortPlan", sortPlan);
     // const sortPlanGet = localStorage.getItem("sortPlan")
     // console.log(sortPlanGet);
     

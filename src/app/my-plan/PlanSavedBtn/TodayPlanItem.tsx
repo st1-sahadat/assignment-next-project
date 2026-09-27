@@ -2,7 +2,7 @@
 import { workoutContext } from '@/app/context/workoutContext';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { RxCross2 } from 'react-icons/rx';
 import NotAvialibleItem from './NotAvialibleItem';
 import { IWorkoutType } from '@/app/components/Type/type';
@@ -22,6 +22,12 @@ const TodayPlanItem = ({sortPlan}:{sortPlan:IWorkoutType[]}) => {
     const handleClickItemRemove =()=>{
         toast("removes the workout.");
     }
+
+    // useEffect(() => {
+    //     localStorage.setItem("sortPlan", JSON.stringify(sortPlan));
+    //     console.log(localStorage.getItem("sortPlan"));
+    // }, [sortPlan]);
+    
 
 
     return (
@@ -97,9 +103,10 @@ const TodayPlanItem = ({sortPlan}:{sortPlan:IWorkoutType[]}) => {
                         {/* Mark as Done Button */}
                         <button
                         onClick={() => handleClickMarkAsDone(m.id)}
+                        disabled={markAsDone === m.id}
                         className={`px-5 py-2 rounded-full border border-gray-600 text-sm font-semibold transition duration-200 
                             ${markAsDone === m.id
-                                ? 'bg-[#cf0] text-black'
+                                ? 'bg-[#cf0] text-black cursor-not-allowed opacity-70'
                                 : 'text-gray-300 hover:bg-gray-800'
                             }`}
                         // className="px-5 py-2 rounded-full bg-[#d4ff00] text-black text-sm font-bold flex items-center gap-2 hover:bg-[#bce600] transition duration-200"
